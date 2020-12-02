@@ -18,3 +18,18 @@ steps:
     jdkVersionOption: 'Java11'
     jdkArchitectureOption: 'x64'
     goals: 'package'
+
+- task: CopyFiles@2
+  name: copyjars
+  displayName: Copy built artifacts to staging directory
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: '**/target/*.jar'
+    flattenFolders: true
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'build'
+    publishLocation: 'Container'
