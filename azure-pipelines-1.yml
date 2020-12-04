@@ -23,7 +23,7 @@ steps:
   displayName: Copy built artifacts to staging directory
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
-    contents: '/others/*.jar'
+    contents: '**/others/*.jar'
     flattenFolders: true
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
