@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Copy Jar file instead of build
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Starting...'
+
+- task: CopyFiles@2
+  name: copyjars
+  displayName: Copy built artifacts to staging directory
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: '**/others/*.jar'
+    flattenFolders: true
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'build'
+    publishLocation: 'Container'
