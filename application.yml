@@ -2,7 +2,7 @@ logging:
   level:
     org:
       springframework: INFO
-message: HELLO12
+message: HELLO123
 spring:
   cloud:
     config:
