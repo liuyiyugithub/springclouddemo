@@ -1,2 +1,4 @@
 logging.level.org.springframework: INFO
 message: HELLO1
+spring.cloud.config.auto-refresh: true
+spring.cloud.config.refresh-interval: 10
