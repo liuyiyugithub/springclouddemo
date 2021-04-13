@@ -7,7 +7,7 @@ spring:
   cloud:
     config:
       auto-refresh: true
-spring：
-  cloud：
-    config：
+spring:
+  cloud:
+    config:
       refresh-interval: 10
