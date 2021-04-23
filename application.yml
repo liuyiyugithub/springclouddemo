@@ -6,8 +6,8 @@ message: HELLO123
 spring:
   cloud:
     config:
-      auto-refresh: true
+      auto-refresh: false
 spring:
   cloud:
     config:
-      refresh-interval: 10
+      refresh-interval: 1000
