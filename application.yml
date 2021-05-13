@@ -3,11 +3,3 @@ logging:
     org:
       springframework: INFO
 message: HELLO123
-spring:
-  cloud:
-    config:
-      auto-refresh: false
-spring:
-  cloud:
-    config:
-      refresh-interval: 1000
