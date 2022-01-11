@@ -11,10 +11,6 @@ public class HelloController {
         return "Greetings from Spring Boot!";
     }
 
-    @RequestMapping("/getcount")
-    public String getcount() {
-        int rowcount = Utilities.getCount();
-        return String.valueOf(rowcount);
-    }
+
 
 }
